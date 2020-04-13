@@ -15,13 +15,13 @@ id	username	email	name	lastname	address	friends_list
 ```json
 [
   {
-    id: 1,
-    username: "Desiree.H",
-    email: "desiree.hosea@gmail.com",
-    name: "Desiree",
-    lastname: "Hosea", 
-    Address: "777 Brockton Avenue, Abington MA",
-    friends_list: [25,13,7]
+    "id": 1,
+    "username": "Desiree.H",
+    "email": "desiree.hosea@gmail.com",
+    "name": "Desiree",
+    "lastname": "Hosea", 
+    "Address": "777 Brockton Avenue, Abington MA",
+    "friends_list": [25,13,7]
   },
   ...
 ]
