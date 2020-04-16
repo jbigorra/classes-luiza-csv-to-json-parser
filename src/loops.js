@@ -26,7 +26,7 @@ for (let i = 0; i < arrayWithNumbers.length; i++) {
 
 console.log('\n');
 
-// when I use const instead of var/let; I am declaring a variable with value that can't be change
+// when I use const instead of var/let; I am declaring a variable with value that can't be changed
 // meaning I can't reasign a new object/string etc.
 // when I declare const within a scope of for loop/function etc it exists only inside of the for loop;
 // whenever I put a condition with for loop, it has to be > or < , eventually <= never === !!!!!!!!!!!
