@@ -100,6 +100,14 @@ console.log(transformedArray);
 // console.log the result
 
 const array1 = [100, 4, 10, 27, 40, 1];
+const accumulatorElement = array1[0];
+let accumulatorTotal = 0;
+// how do I not substract from 100?
+for (let c = 0; c < array1.length; c++) {
+  accumulatorTotal = accumulatorElement - array1[c];
+}
+
+console.log(accumulatorTotal);
 
 // Homework2:
 // Given an array of words, concatenate each element to create the result below.
@@ -109,6 +117,15 @@ const array1 = [100, 4, 10, 27, 40, 1];
 // console.log the result
 
 const arrayOfWords = ['Almost', 'before', 'we', 'knew', 'it', 'we', 'had', 'left', 'the', 'ground'];
+
+const fullSentence = [];
+let d = 0;
+while (d < arrayOfWords.length) {
+  const eachWord = arrayOfWords[d] + '';
+  fullSentence.push(eachWord);
+  d++;
+};
+console.log(fullSentence);
 
 // Homework3:
 // Given a sentence string iterate over each character and concatenate them
