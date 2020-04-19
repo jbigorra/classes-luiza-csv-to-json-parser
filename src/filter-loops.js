@@ -91,6 +91,8 @@ for (let b = 0; b < mixedArray.length; b++) {
 console.log(transformedArray);
 // ['asdfdsaf20', 5, 10, 12, 12, 'john20', 'house20', 'number20', 16]
 
+// --------------
+
 // Homework 1:
 // For array1, access the first value which is 100 and put it in an accumulator variable.
 // Then substract the rest of the elements left to the accumulator.
@@ -100,7 +102,7 @@ console.log(transformedArray);
 // console.log the result
 
 const array1 = [100, 4, 10, 27, 40, 1];
-let accumulatorTotal = 100;
+let accumulatorTotal = array1[0];
 for (let c = 1; c < array1.length; c++) {
   accumulatorTotal -= array1[c];
 }
@@ -128,10 +130,11 @@ while (d < arrayOfWords.length) {
     fullSentence += arrayOfWords[d] + '.';
   } else {
     fullSentence += arrayOfWords[d] + ' ';
-  };
+  }
   d++;
 };
 console.log(fullSentence);
+// console.log(arrayOfWords);
 
 // Homework3:
 // Given a sentence string iterate over each character and concatenate them
@@ -143,25 +146,36 @@ console.log(fullSentence);
 // result = ['Almost', 'before', 'we', 'knew', 'it', 'we', 'had', 'left', 'the', 'ground'];
 // console.log the result
 
+// steps:
+// 1) We need the empty result array - done
+// 2) iterate over each character of the string and concatenate - done
+// 3) if a comma is found then we save the part before the comma in emptyResult by pushing
+
 const sentence = 'Almost, before, we, knew, it, we, had, left, the, ground';
-const arrayFromWords = [];
-let words = '';
+const result = [];
+let wordAccumulator = '';
+
+console.log(sentence.length);
 
 for (let i = 0; i < sentence.length; i++) {
   if (sentence[i] === ',') {
-    arrayFromWords.push(words);
-    words = '';
-    // we set the words variable to be empty after we push!!!
+    result.push(wordAccumulator);
+    wordAccumulator = '';
   } else if (sentence[i] === ' ') {
     continue;
   } else {
-    words += sentence[i];
+    wordAccumulator += sentence[i];
     if (i === sentence.length - 1) {
-      arrayFromWords.push(words);
-    }
+      result.push(wordAccumulator);
+    }// ground
   }
+  console.log(wordAccumulator);
 }
 
-console.log(arrayFromWords);
+console.log(result);
 
-// why this part is necessary so within the loop so it doesn't repeat the result of each iteration before the coma -> words = '';
+// https://www.hackerrank.com/
+// Quokka.js
+
+// Saturday 11am
+//
