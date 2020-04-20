@@ -100,15 +100,14 @@ console.log(transformedArray);
 // console.log the result
 
 const array1 = [100, 4, 10, 27, 40, 1];
-let accumulatorTotal = 0;
-// how do I not substract from 100?
+let accumulatorTotal = 100;
 for (let c = 1; c < array1.length; c++) {
-  const accumulatorElement = array1[1] - array1[c];
-  // accumulatorTotal = accumulatorElement - array1[c];
-  accumulatorTotal -= accumulatorElement;
+  accumulatorTotal -= array1[c];
 }
 
 console.log(accumulatorTotal);
+
+// DONE, RESULT 18
 
 // Homework2:
 // Given an array of words, concatenate each element to create the result below.

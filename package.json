@@ -32,5 +32,8 @@
     "modulePathIgnorePatterns": [
       "package.json"
     ]
+  },
+  "dependencies": {
+    "start": "^5.1.0"
   }
 }
