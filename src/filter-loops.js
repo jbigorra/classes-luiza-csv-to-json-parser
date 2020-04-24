@@ -116,12 +116,19 @@ console.log(accumulatorTotal);
 // result = "Almost before we knew it, we had left the ground."
 // console.log the result
 
+// 1. iterate over each element
+
 const arrayOfWords = ['Almost', 'before', 'we', 'knew', 'it', 'we', 'had', 'left', 'the', 'ground'];
-const fullSentence = [];
+let fullSentence = '';
 let d = 0;
 while (d < arrayOfWords.length) {
-  const eachWord = arrayOfWords[d] + 'a' + 20;
-  fullSentence.push(eachWord);
+  if (arrayOfWords[d] === 'it') {
+    fullSentence += arrayOfWords[d] + ', ';
+  } else if (arrayOfWords[d] === 'ground') {
+    fullSentence += arrayOfWords[d] + '.';
+  } else {
+    fullSentence += arrayOfWords[d] + ' ';
+  };
   d++;
 };
 console.log(fullSentence);
@@ -136,4 +143,4 @@ console.log(fullSentence);
 // result = ['Almost', 'before', 'we', 'knew', 'it', 'we', 'had', 'left', 'the', 'ground'];
 // console.log the result
 
-const sentence = 'Almost, before, we, knew, it, we, had, left, the, ground';
+// const sentence = 'Almost, before, we, knew, it, we, had, left, the, ground';
