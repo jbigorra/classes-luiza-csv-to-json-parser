@@ -144,3 +144,5 @@ console.log(fullSentence);
 // console.log the result
 
 // const sentence = 'Almost, before, we, knew, it, we, had, left, the, ground';
+
+
