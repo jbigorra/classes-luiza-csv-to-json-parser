@@ -124,7 +124,6 @@ function SplitStringIntoArray (stringWithWords, splittingCharacter) {
         arrayOutOfString.push(words);
       }
     }
-    console.log(arrayOutOfString);
   }
   return arrayOutOfString;
 }
