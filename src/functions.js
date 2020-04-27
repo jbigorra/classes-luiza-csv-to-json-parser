@@ -21,15 +21,13 @@
 // 3. separate by comma
 // 4. return the result
 
-
 const arrayOfWords = ['Almost', 'before', 'we', 'knew', 'it', 'we', 'had', 'left', 'the'];
 console.log(arrayOfWords);
 
-function JoinArrayItems(arrayOfWords, separator) {
+function JoinArrayItems (arrayOfWords, separator) {
   if (typeof separator !== 'string' || !Array.isArray(arrayOfWords)) {
-      throw new Error('Wrong type of input');
+    throw new Error('Wrong type of input');
   }
-
 
   let stringWithCommas = '';
   for (let i = 0; i < arrayOfWords.length; i++) {
@@ -45,26 +43,24 @@ function JoinArrayItems(arrayOfWords, separator) {
   return stringWithCommas;
 }
 
-const result1 = JoinArrayItems(arrayOfWords, ",");
+const result1 = JoinArrayItems(arrayOfWords, ',');
 console.log(result1);
 
-
-const result2 = JoinArrayItems(arrayOfWords, "!");
+const result2 = JoinArrayItems(arrayOfWords, '!');
 console.log(result2);
 
 const arrayOfMixedValues = ['asrf', 1287, 'blablabla', true, 12, false];
 
-const result3 = JoinArrayItems(arrayOfMixedValues, "?");
+const result3 = JoinArrayItems(arrayOfMixedValues, '?');
 console.log(result3);
 
-
-const result4 = JoinArrayItems([], ",");
+const result4 = JoinArrayItems([], ',');
 console.log(result4);
 
 // Throwing error
 
 try {
-  const result5 = JoinArrayItems(["item1", "item2", "item3"], 1);
+  const result5 = JoinArrayItems(['item1', 'item2', 'item3'], 1);
   console.log(result5);
 } catch (error) {
   console.log(error.message);
@@ -73,13 +69,13 @@ try {
 // Throwing error
 
 try {
-  const result6 = JoinArrayItems("123", ",");
+  const result6 = JoinArrayItems('123', ',');
   console.log(result6);
 } catch (error) {
   console.log(error.message);
 }
 
-///--------------------------------------------------------------
+/// --------------------------------------------------------------
 
 /**
  * Create a function called SplitStringIntoArray which receives two parameters.
@@ -104,7 +100,6 @@ try {
  *
  *  */
 
-
 // create a function SplitStringIntoArray with 2 parameters;
 // pass the variable with string values
 // pass the splitting character
@@ -114,20 +109,24 @@ try {
 // to return as an array, i need an array variable to which I push the values of the splitted string
 // return as an array
 
-const stringWithWords = "Almost,before,we,knew";
+const stringWithWords = 'Almost,before,we,knew';
 
-function SplitStringIntoArray(stringWithWords, splittingCharacter) {
-
-    let words = '';
-    let arrayOutOfString = [];
-    for (let i = 0; i < stringWithWords.length; i++) {
-       words += stringWithWords[i];
-       if (stringWithWords[i] === ',') {
-           arrayOutOfString.push(words);
-       }
-       console.log(arrayOutOfString)
+function SplitStringIntoArray (stringWithWords, splittingCharacter) {
+  let words = '';
+  const arrayOutOfString = [];
+  for (let i = 0; i < stringWithWords.length; i++) {
+    if (stringWithWords[i] === ',') {
+      arrayOutOfString.push(words);
+      words = '';
+    } else {
+      words += stringWithWords[i];
+      if (i === stringWithWords.length - 1) {
+        arrayOutOfString.push(words);
+      }
     }
-    return arrayOutOfString;
+    console.log(arrayOutOfString);
+  }
+  return arrayOutOfString;
 }
 
-console.log(SplitStringIntoArray("Almost,before,we,knew", ","));
+console.log(SplitStringIntoArray('Almost,before,we,knew', ','));
