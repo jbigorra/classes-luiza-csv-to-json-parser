@@ -143,6 +143,22 @@ console.log(fullSentence);
 // result = ['Almost', 'before', 'we', 'knew', 'it', 'we', 'had', 'left', 'the', 'ground'];
 // console.log the result
 
-// const sentence = 'Almost, before, we, knew, it, we, had, left, the, ground';
+const sentence = 'Almost, before, we, knew, it, we, had, left, the, ground';
+const arrayFromWords = [];
+let words = '';
 
+for (let i = 0; i < sentence.length; i++) {
+  if (sentence[i] === ',') {
+    arrayFromWords.push(words);
+    words = '';
+  } else if (sentence[i] === '') {
+    continue;
+  } else {
+    words += sentence[i];
+    if (i === sentence.length - 1) {
+      arrayFromWords.push(words);
+    }
+  }
+}
 
+console.log('here goes the last result ' + arrayFromWords);
