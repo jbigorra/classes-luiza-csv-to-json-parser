@@ -80,27 +80,4 @@ console.log(Naruto.health);
 console.log(utility);
 
 
-// Homework
-/**
- *
- * Instead of using a Factory function that returns a literal object with a new ninja everytime.
- * Transform that implemention to instead use either Class to create a ninja or a constructor function.
- *
- * In this implementation of ninjas they do not belong to a team.
- *
- * The result should be creating a ninja in the following way:
- *
- * const Naruto = new Ninja("Sasuke", "Super punch", "Tokyo", 25);
- * const Sasuke = new Ninja("Naruto", "Super kick", "Tokyo", 40);
- * const Goku = new Ninja("Goku", "Kamekame ha", "Tokyo", 30);
- *
- * All ninjas should still be able to attack, say hi to other ninjas and also to heal other ninjas.
- *
- *
- * Extra homework:
- *
- * 1) Make a ninja be able to join a team.
- *
- * 2) If number one was done, then block allies from attacking each other and block enemies from healing each other.
- *
- */
+

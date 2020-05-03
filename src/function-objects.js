@@ -19,6 +19,10 @@
  *
  * 1) Make a ninja be able to join a team.
  *
+ * create a joinTeam function in the object and I would say that you don't do it through the constructor.
+ * The idea is that you use the function/method to make the ninja join a team and the the value of the team property
+ * through the function.
+ *
  * 2) If number one was done, then block allies from attacking each other and block enemies from healing each other.
  *
  */
@@ -42,14 +46,20 @@ class Ninja {
   heal (otherNinja) {
     console.log(this.name + ' heals ' + otherNinja.name);
   }
+
+  joinTeam (team) {
+    team.add(this);
+    this.team = team;
+  }
 }
 
-const Naruto = new Ninja('Naruto', 'Rasengan', 'Tokyo', 25);
-const Sasuke = new Ninja('Sasuke', 'Sharingan', 'Tokyo', 40);
+const Naruto = new Ninja('Naruto', 'Rasengan', 'Uzumaki', 25);
+const Sasuke = new Ninja('Sasuke', 'Sharingan', 'Itachi', 40);
 const Goku = new Ninja('Goku', 'Kamekame ha', 'Tokyo', 30);
 
 console.log(Naruto.origin);
 
+Naruto.joinTeam(Leaf);
 Naruto.attack(Goku);
 Naruto.saysHiTo(Sasuke);
 Sasuke.heal(Goku);
