@@ -33,9 +33,12 @@ class Ninja {
     this.specialAbility = specialAbility;
     this.origin = origin;
     this.age = age;
+    this.health = 100;
   }
 
   attack (otherNinja) {
+
+    otherNinja.health -= 10
     console.log(this.name + ' attacks ' + otherNinja.name + ' with ' + this.specialAbility);
   }
 
@@ -44,12 +47,61 @@ class Ninja {
   }
 
   heal (otherNinja) {
+
+    otherNinja.health += 20;
+    if (otherNinja.health > 100) otherNinja.health = 100;
     console.log(this.name + ' heals ' + otherNinja.name);
   }
 
-  joinTeam (team) {
-    team.add(this);
-    this.team = team;
+}
+
+//
+
+//const subscription = { team: "aTeam", ninja: aNinja };
+
+class TeamManager {
+  constructor() {
+   //this.teams = ['Leaf', 'Water', 'Stone', 'Birds'];
+   this.subscriptions = [];
+  }
+
+  subscribe(ninja, team) {
+
+    if(this.IsSubscribed(ninja)) {
+      console.log(`${ninja.name} is already subscribed`);
+      return;
+    }
+
+    const subscription = { ninja, team };
+
+    this.subscriptions.push(subscription);
+  }
+
+  unsubscribe(ninja) {
+    if(!this.IsSubscribed(ninja)) return;
+
+    // let index;
+    // for (let i=0; i < this.subscriptions.length; i++) {
+    //   if (this.subscriptions[i].ninja === ninja) {
+    //     index = i;
+    //     break;
+    //   }
+    // }
+
+    // const subscription = this.subscriptions.find(subscription => subscription.ninja === ninja);
+
+    // const index = this.subscriptions.indexOf(subscription);
+
+    const index = this.subscriptions.findIndex(subscription => subscription.ninja === ninja);
+
+    this.subscriptions.splice(index, 1);
+  }
+
+  IsSubscribed (ninja) {
+    // const subscription = this.subscriptions.filter(subscription => subscription.ninja === ninja);
+    // return subscription.length === 1;
+
+    return this.subscriptions.some(subscription => subscription.ninja === ninja);
   }
 }
 
@@ -61,5 +113,54 @@ console.log(Naruto.origin);
 
 Naruto.joinTeam(Leaf);
 Naruto.attack(Goku);
+console.log(Goku.health);
 Naruto.saysHiTo(Sasuke);
 Sasuke.heal(Goku);
+console.log(Goku.health);
+
+const teamManager = new TeamManager();
+
+teamManager.subscribe(Sasuke, 'Shadow');
+teamManager.subscribe(Naruto, 'Leaf');
+teamManager.subscribe(Goku, 'Shadow');
+
+
+
+teamManager.subscribe(Goku, 'Leaf');
+teamManager.subscribe(Sasuke, 'Leaf');
+
+teamManager.unsubscribe(Naruto);
+
+
+
+console.log(teamManager.subscriptions);
+// im here discord is being dumb
+// hahah ok no worries
+// ... not working, wtf
+
+
+// 16    8     4     2     1 // decimal values
+// // ------------------------// binary
+// 0     0     0     0     0
+// 0     0     0     0     1    // 1
+// 0     0     0     1     0    // 2
+// 0     0     0     1     1    // 3
+// 0     0     1     0     0    // 4
+// 0     0     1     0     1    // 5
+
+
+
+// 32    64     128     256     512
+
+// https://leetcode.com/
+// https://hackerrank.com/
+
+// const string = "Juancho";
+
+// const obj = {
+//   "Juancho": function () {
+//     console.log("Im a juancho property");
+//   }
+// };
+
+// obj[string]();
