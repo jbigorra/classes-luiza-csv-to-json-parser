@@ -156,13 +156,12 @@ for (let i = 0; i < sentence.length; i++) {
     continue;
   } else {
     words += sentence[i];
-   if (i === sentence.length - 1) {
-     arrayFromWords.push(words);
-   }
+    if (i === sentence.length - 1) {
+      arrayFromWords.push(words);
+    }
   }
 }
 
 console.log(arrayFromWords);
 
-// why this part: if (i === sentence.length - 1) is necessary so it doesn't create the character pyramid?
 // why this part is necessary so within the loop so it doesn't repeat the result of each iteration before the coma -> words = '';
