@@ -120,39 +120,31 @@ const divide = (x, y) => x / y;
   *
   */
 
-  /**
-   * im heeereeeee
-   *
-   *
-   *
-   *
-   */
 
 
 
-var stringWithEndOfLine = "";
-// First iteratioon
-stringWithEndOfLine += stringWithEndOfLine  + "#";  // 0
-stringWithEndOfLine += "\n";
-// save the first iteration and add end of line
-// we go to the 2nd iteration with the result of the 1st and we add end of result
+function buildStairs(n) { // n = 6, height = 6, baseOfstairs = 6
+  let level = "";
+  let stairs = "";
 
-// Second iteration
-stringWithEndOfLine += stringWithEndOfLine  + "#";  // 0
-stringWithEndOfLine += "\n";
+  for (let i = n - 1; i >= 0; i--) { // This loop works to "stay" temporarily in a level and build it.
+    for (let j = 0; j < n; j++) { // Builds the level, meaning we concatenate spaces and hashtags
+      if (j < i) level += " "; // i = 6; j = 0,1,2,3,4 ===> 0 -> 4 < 5, 0 -> 3 < 4
+      else level += "#";  // 4 == 4, 5 < 4
+    }
 
-console.log(stringWithEndOfLine);
-// heelloo0ooo
+    stairs += level + "\n";
+    level = "";
+  }
 
-let steps = "";
-let staircase = "";
-for (let i = 0; i < 6; i++) {
-  steps += "#";
-  staircase += steps + "\n";
+  console.log(stairs);
 }
 
-console.log(staircase);
+buildStairs(10);
 
-for (let i = 5; i <= 0; i--) {
+// 5  4  3   2  1  0 => i
 
-}
+// (j < i)
+
+// 0  1  2   3  4  5 => j
+// https://www.hackerrank.com/challenges/mini-max-sum/problem
