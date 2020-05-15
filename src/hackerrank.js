@@ -9,8 +9,7 @@ for (let i = 0; i < array3.length; i++) {
 console.log(sumofarray3);
 
 //
-function simpleArraySum(ar) {
-
+function simpleArraySum (ar) {
   let sumofarray = 0;
 
   for (let i = 0; i < ar.length; i++) {
@@ -22,7 +21,6 @@ function simpleArraySum(ar) {
 
 // https://www.khanacademy.org/
 
-
 // Complete the plusMinus function below.
 // arr is an array with numbers which could be -, 0, +;
 // create a loop that will iterate over array and
@@ -31,8 +29,7 @@ function simpleArraySum(ar) {
 // + - to the accumulator
 // then we divide the length of the array tbc
 
-function plusMinus(arr) {
-
+function plusMinus (arr) {
   let negativeNumbers = 0;
   let neutral = 0;
   let positiveNumbers = 0;
@@ -62,7 +59,6 @@ const substract = (x, y) => x - y;
 const multiply = (x, y) => x * y;
 const divide = (x, y) => x / y;
 
-
 /**
  *
  * for each item in array
@@ -85,9 +81,7 @@ const divide = (x, y) => x / y;
  *
  */
 
-
-
- /**
+/**
   *
   * The staircase is right-aligned, composed of # symbols and spaces, and has a height and width of .
   *
