@@ -12,19 +12,20 @@ function diagonalDifference (matrix) {
   for (let i = 0; i < matrix.length; i++) {
     const row = matrix[i];
 
-    for (let k = 0; k < row.length; i++) {
+    for (let k = 0; k < row.length; k++) {
       const elementofRow = row[k];
 
       if (i === k) {
         lefttoright += elementofRow;
       }
       const lastIndexofElement = row.length - 1;
+
       if (k === (lastIndexofElement - i)) {
         righttoleft += elementofRow;
       }
     }
   }
-  return Math.abs(righttoleft - lefttoright);
+  console.log(Math.abs(righttoleft - lefttoright));
 }
 
 const matrix = [
