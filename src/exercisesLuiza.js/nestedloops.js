@@ -11,6 +11,7 @@ function diagonalDifference (matrix) {
 
   for (let i = 0; i < matrix.length; i++) {
     const row = matrix[i];
+    console.log(i);
 
     for (let k = 0; k < row.length; k++) {
       const elementofRow = row[k];
@@ -25,7 +26,7 @@ function diagonalDifference (matrix) {
       }
     }
   }
-  console.log(Math.abs(righttoleft - lefttoright));
+  return Math.abs(righttoleft - lefttoright);
 }
 
 const matrix = [
@@ -34,4 +35,4 @@ const matrix = [
   [9, 8, 9] // 2 2 2
 ];
 
-console.log('hejka');
+console.log(diagonalDifference(matrix));
