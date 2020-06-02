@@ -11,7 +11,6 @@ function diagonalDifference (matrix) {
 
   for (let i = 0; i < matrix.length; i++) {
     const row = matrix[i];
-    console.log(i);
 
     for (let k = 0; k < row.length; k++) {
       const elementofRow = row[k];
@@ -30,9 +29,9 @@ function diagonalDifference (matrix) {
 }
 
 const matrix = [
-  [1, 2, 3], // 0 0 0
-  [4, 5, 6], // 1 1 1
-  [9, 8, 9] // 2 2 2
+  [1, 2, 5], // 0 0 0
+  [8, 1, 6], // 1 1 1
+  [5, 7, 9] // 2 2 2
 ];
 
 console.log(diagonalDifference(matrix));
