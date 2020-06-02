@@ -119,3 +119,18 @@ function rotationAgain (arr, d) {
 }
 
 console.log(rotationAgain([444, 101, 234, 55, 14], 4));
+
+
+function JuanchoShift(arr, d) {
+
+  let aux;
+  for (let i = 0; i < d; i++) {
+    for (let j = 1; j < arr.length; j++) {
+      if (j === 1) aux = arr[0];
+      arr[j - 1] = arr[j];
+    }
+    arr[arr.length - 1] = aux;
+  }
+
+  return arr;
+}
