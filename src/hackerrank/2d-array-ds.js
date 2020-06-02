@@ -39,16 +39,21 @@ function shift (arr, d) {
     // console.log(i);
   }
 
-  return output;
+  return arr;
 }
 
 // console.log(shift([1, 2, 3, 4, 15], 2));
 
-// // first iteration
-// 0,1,2,3,4
-// [1, 2, 3, 4, 15]
+function shift2(arr = [], d) {
+  for (let i = 0; i < d; i++) {
+    // const el = arr.shift();
+    // arr.push(el);
+    arr.splice()
+  }
+  return arr;
+}
 
-// [2, 3, 4, 15, 1]
+console.log(shift2([1, 2, 3, 4, 15], 2));
 
 // [2, 3, 4, 15, 1]
 
